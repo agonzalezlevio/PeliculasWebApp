@@ -19,7 +19,7 @@ export class BuscarComponent implements OnInit {
       if ( this.buscar.length === 0 ) {
         return;
       }
-      this.peliculasService.buscarPelicula( this.buscar ).subscribe(data => console.log(data));
+      this.peliculasService.buscarPelicula( this.buscar );
   }
 
 }
