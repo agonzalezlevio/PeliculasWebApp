@@ -10,7 +10,10 @@ export class PeliculasService {
 
   private API_KEY = 'b9ce5164f948062a1fc5362ee2dc9ca5';
   private URL = 'https://api.themoviedb.org/3';
+  private DIAS_PELICULAS_A_ESTRENAR = 30;
 
+  // Almacenamos las películas para mantenerlas
+  public peliculas: any[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -41,7 +44,7 @@ export class PeliculasService {
 
     const desde = new Date();
     const hasta = new Date();
-    hasta.setDate(hasta.getDate() + 30 );
+    hasta.setDate(hasta.getDate() + this.DIAS_PELICULAS_A_ESTRENAR );
 
     const desdeStr = this.getFechaString(desde);
     const hastaStr = this.getFechaString(hasta);
@@ -70,5 +73,28 @@ export class PeliculasService {
       }
       return resultadoPopulares;
     }));
+  }
+
+  public buscarPelicula(texto: string) {
+    const url = `${ this.URL }/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${ this.API_KEY }&language=es`;
+
+    return this.httpClient.get(url).pipe(map((data: any) => {
+
+      const resultadoBusqueda = [];
+      for (const pelicula of data.results) {
+        resultadoBusqueda.unshift(pelicula);
+      }
+      this.peliculas = resultadoBusqueda;
+      return resultadoBusqueda;
+    }));
+  }
+
+  public getPelicula(id: string){
+    const url = `${ this.URL }/movie/${id}?api_key=${ this.API_KEY }&language=es`;
+
+    return this.httpClient.get(url).pipe(map((pelicula: any) => {
+      return pelicula;
+    }
+    ));
   }
 }
