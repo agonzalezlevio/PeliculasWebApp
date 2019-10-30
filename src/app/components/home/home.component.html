@@ -1,6 +1,60 @@
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Películas App</h1>
-      <p class="lead">Esta es una aplicación de películas usando la API de themoviedb.org </p>
-    </div>
+  <div class="container">
+    <h1 class="display-4">Películas App</h1>
+    <p class="lead">Esta es una aplicación de películas usando la API de themoviedb.org </p>
   </div>
+</div>
+
+<div class="container">
+  <h1>Cartelera</h1>
+  <div class="row">
+
+    <!-- Caja Derecha -->
+    <div class="col-sm-6">
+
+      <!-- Imagen grande -->
+      <div class="row">
+        <div class="col-md-12 div-pic-1"
+          [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+        </div>
+      </div>
+
+      <!-- Imágenes pequeñas -->
+      <div class="row">
+        <!-- Imagen Izquierda -->
+        <div class="col-sm-6 div-pic-2 "
+          [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+        </div>
+        <!-- Imagen Derecha -->
+        <div class="col-sm-6 div-pic-2 "
+          [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+        </div>
+      </div>
+      
+    </div>
+
+    
+      <!-- Caja Izquierda -->
+      <div class="col-sm-6">
+        <!-- Imágenes pequeñas -->
+        <div class="row">
+            <!-- Imagen Izquierda -->
+            <div class="col-sm-6 div-pic-2 "
+              [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+            </div>
+            <!-- Imagen Derecha -->
+            <div class="col-sm-6 div-pic-2 "
+              [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+            </div>
+          </div>
+
+        <!-- Imagen grande -->
+        <div class="row">
+          <div class="col-md-12 div-pic-1"
+            [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/uTfdOozort4sp9kukWxEmdmRsqJ.jpg)'}">
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
