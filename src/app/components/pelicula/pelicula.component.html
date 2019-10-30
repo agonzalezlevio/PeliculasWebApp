@@ -11,6 +11,9 @@
             <p class="text-justify">
                 {{pelicula.overview}}
             </p>
+            <p>
+                Género: <span class="badge badge-pill badge-dark mr-1" *ngFor="let genero of pelicula.genres">{{genero.name}}</span>
+            </p>
             <h4>Frase célebre</h4>
             <blockquote class="blockquote">
                 <p class="text-">
@@ -18,12 +21,13 @@
                 </p>
             </blockquote>
             <p>
-                Calificación: <span class="badge badge-primary">{{pelicula.vote_average}}</span>
+                Calificación usuarios: <span class="badge badge-primary">{{pelicula.vote_average}}</span>
             </p>
             <br>
             <p>
-                Popularidad: <span class="badge badge-primary">{{(pelicula.popularity/10 | number:'.0-0')}}/10</span>
+                Popularidad: <span class="badge badge-primary">{{(pelicula.popularity | number:'.0-0')}}</span>
             </p>
+            
             <button 
             [routerLink]="['/'+regresarA,busqueda]"
             type="button" 
