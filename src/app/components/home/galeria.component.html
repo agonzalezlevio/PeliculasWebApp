@@ -8,6 +8,7 @@
             <div class="col-md-12 div-pic-1 puntero"
                 [routerLink]="['/pelicula', peliculas[0].id,'home']"  
                 [ngStyle]="{'background-image': 'url( '+(peliculas[0] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[0].title}}</p>
             </div>
         </div>
 
@@ -17,11 +18,13 @@
             <div class="col-sm-6 div-pic-2  puntero"
                 [routerLink]="['/pelicula', peliculas[1].id,'home']"
                 [ngStyle]="{'background-image': 'url( '+(peliculas[1] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[1].title}}</p>
             </div>
             <!-- Imagen Derecha -->
             <div class="col-sm-6 div-pic-2  puntero"
                 [routerLink]="['/pelicula', peliculas[2].id,'home']"
                 [ngStyle]="{'background-image': 'url( '+(peliculas[2] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[2].title}}</p>
             </div>
         </div>
 
@@ -36,11 +39,13 @@
             <div class="col-sm-6 div-pic-2  puntero"
                 [routerLink]="['/pelicula', peliculas[3].id,'home']"
                 [ngStyle]="{'background-image': 'url( '+(peliculas[3] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[3].title}}</p>
             </div>
             <!-- Imagen Derecha -->
             <div class="col-sm-6 div-pic-2  puntero"
                 [routerLink]="['/pelicula', peliculas[4].id,'home']"
                 [ngStyle]="{'background-image': 'url( '+(peliculas[4] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[4].title}}</p>
             </div>
         </div>
 
@@ -49,6 +54,7 @@
             <div class="col-md-12 div-pic-1  puntero"
                 [routerLink]="['/pelicula', peliculas[5].id,'home']"
                 [ngStyle]="{'background-image': 'url( '+(peliculas[5] | peliculaImagen)+')'}">
+                <p class="pic-titulo">{{peliculas[5].title}}</p>
             </div>
         </div>
     </div>
