@@ -11,7 +11,7 @@ export class BuscarComponent implements OnInit {
 
   public buscar: string;
 
-  constructor(public peliculasService: PeliculasService, public router: ActivatedRoute) { 
+  constructor(public peliculasService: PeliculasService, public router: ActivatedRoute) {
     this.router.params.subscribe(parametros => {
 
       if (parametros.texto) {

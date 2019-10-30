@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row animated fadeIn fast">
         <div class="card-columns">
             <div class="card" *ngFor="let pelicula of peliculasService.peliculas">
                 <img [src]="pelicula | peliculaImagen" class="card-img-top" [alt]="pelicula.title">
@@ -24,7 +24,10 @@
                     <h5 class="card-title">{{pelicula.title}}</h5>
                     <p class="card-text">{{pelicula.release_date}}</p>
                     <p>{{pelicula.overview | slice:0:256}}...</p>
-                    <button type="button" class="btn btn-block btn-outline-info">Ver más</button>
+                    <button 
+                    [routerLink]="['/pelicula', pelicula.id,'buscar',buscar]"  
+                    type="button" 
+                    class="btn btn-block btn-outline-info">Ver más</button>
                 </div>
             </div>
         </div>

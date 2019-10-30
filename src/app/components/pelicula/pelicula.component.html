@@ -1,1 +1,35 @@
-<p>pelicula works!</p>
+<div class="container main-container" *ngIf="pelicula">
+    <h1>{{pelicula.title}}</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <img class="img-fluid img-thumbnail" [src]="pelicula | peliculaImagen:true" [alt]="pelicula.title">
+        </div>
+
+        <div class="col-md-7">
+            <h3>Sinopsis</h3>
+            <hr>
+            <p class="text-justify">
+                {{pelicula.overview}}
+            </p>
+            <h4>Frase célebre</h4>
+            <blockquote class="blockquote">
+                <p class="text-">
+                    {{pelicula.tagline}}
+                </p>
+            </blockquote>
+            <p>
+                Calificación: <span class="badge badge-primary">{{pelicula.vote_average}}</span>
+            </p>
+            <br>
+            <p>
+                Popularidad: <span class="badge badge-primary">{{(pelicula.popularity/10 | number:'.0-0')}}/10</span>
+            </p>
+            <button 
+            [routerLink]="['/'+regresarA,busqueda]"
+            type="button" 
+            class="btn btn-outline-danger"
+            >Regresar</button>
+        </div>
+
+    </div>
+</div>

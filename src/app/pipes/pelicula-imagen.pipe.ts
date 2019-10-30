@@ -7,9 +7,11 @@ export class PeliculaImagenPipe implements PipeTransform {
 
   private URL_IMAGE = 'https://image.tmdb.org/t/p/w500';
 
-  transform(pelicula: any): any {
+  transform(pelicula: any, poster: boolean = false): any {
 
-    console.log('pelicula', pelicula);
+    if (poster) {
+      return this.URL_IMAGE + pelicula.poster_path;
+    }
 
     if (pelicula.backdrop_path) {
       return this.URL_IMAGE + pelicula.backdrop_path;

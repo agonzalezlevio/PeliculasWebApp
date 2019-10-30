@@ -89,7 +89,7 @@ export class PeliculasService {
     }));
   }
 
-  public getPelicula(id: string){
+  public getPelicula(id: string) {
     const url = `${ this.URL }/movie/${id}?api_key=${ this.API_KEY }&language=es`;
 
     return this.httpClient.get(url).pipe(map((pelicula: any) => {
